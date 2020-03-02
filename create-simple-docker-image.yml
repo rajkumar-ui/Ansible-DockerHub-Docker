@@ -8,16 +8,16 @@
       chdir: /opt/docker
 
   - name: create tag to docker image
-    command: docker tag simple-devops-image nani903020/simple-devops-image
+    command: docker tag simple-devops-image goldentech/simple-devops-image
 
   - name: Log into DockerHub
     docker_login:
-      username: nani903020
-      password: Rajkumar@143
+      username: goldentech
+      password: Goldentech2016
       email: docker@docker.io
   - name: push image on to dockerhub
-    command: docker push nani903020/simple-devops-image
+    command: docker push goldentech/simple-devops-image
 
   - name: remove docker images from ansible server
-    command: docker rmi simple-devops-image:latest nani903020/simple-devops-image
+    command: docker rmi simple-devops-image:latest goldentech/simple-devops-image
     ignore_errors: yes
