@@ -3,21 +3,21 @@
   become: true
   tasks:
   - name: create docker image using war file
-    command: docker build -t simple-devops-image .
+    command: docker build -t java-web-app .
     args:
       chdir: /opt/docker
 
   - name: create tag to docker image
-    command: docker tag simple-devops-image nani903020/simple-devops-image
+    command: docker tag java-web-app nani903020/java-web-app
 
   - name: Log into DockerHub
     docker_login:
       username: nani903020
       password: Rajkumar@143
-      email: rajkumarthatikanti@gmail.com
+      email: docker@docker.io
   - name: push image on to dockerhub
-    command: docker push nani903020/simple-devops-image
+    command: docker push nani903020/java-web-app
 
   - name: remove docker images from ansible server
-    command: docker rmi simple-devops-image:latest nani903020/simple-devops-image
+    command: docker rmi java-web-app:latest nani903020/java-web-app
     ignore_errors: yes
