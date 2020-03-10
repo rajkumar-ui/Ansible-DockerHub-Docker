@@ -10,14 +10,14 @@
     command: docker rm simple-devops-container
     ignore_errors: yes
   - name: remove docker image
-    command: docker rmi nani903020/simple-devops-image
+    command: docker rmi goldentech/simple-devops-image
     ignore_errors: yes
   #- name: Build docker image using war file
   # command: docker build -t goldentech/simple-devops-image .
   # args:
   #   chdir: /opt/docker
   - name: pull the docker image from dockerhub
-    command: docker pull nani903020/simple-devops-image:latest
+    command: docker pull goldentech/simple-devops-image:latest
     
   - name: create container using simple-devops-image
-    command: docker run -d --name simple-devops-container -p 8080:8080 nani903020/simple-devops-image
+    command: docker run -d --name simple-devops-container -p 8080:8080 goldentech/simple-devops-image
