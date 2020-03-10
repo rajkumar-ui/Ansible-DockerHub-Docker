@@ -18,7 +18,7 @@ node{
     
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'a89d8b3f-b337-4b3f-8421-b21e9a11c3b2', variable: 'dockerhubpwd')]) {
-          sh "docker login -u nani903020 -p ${dockerhubpwd}"
+          sh "docker login -u nani903020 -p ${a89d8b3f-b337-4b3f-8421-b21e9a11c3b2}"
         }
         sh 'docker push nani903020/java-web-app'
      }
