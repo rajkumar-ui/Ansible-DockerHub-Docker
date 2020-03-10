@@ -5,7 +5,7 @@
   - name: create docker image using war file
     command: docker build -t java-web-app .
     args:
-      chdir: /opt/docker
+      chdir: //opt/docker
 
   - name: create tag to docker image
     command: docker tag java-web-app nani903020/java-web-app
